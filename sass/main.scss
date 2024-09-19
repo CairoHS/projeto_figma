@@ -1,0 +1,361 @@
+// variaveis do css
+
+$cor-branca : #fff;
+$vermelho-vinho : #8E2424;
+$cinza : #667085;
+$preto: #000;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+//fonter
+
+$fonte-logo: 18px;
+$fonte-botao: 16px;
+$fonte-titulo-banner: 40px;
+$fonte-texto-banner: 20px;
+$fonte-numero-grande: 60px;
+
+$fonte-normal: 18px;
+$fonte-menor: 16px;
+
+@mixin flex_row() {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin area($largura, $altura) {
+    width: $largura;
+    height: $altura;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+button {
+    font-family: "Inter", sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    @include flex_row();
+    align-items: center;
+    justify-content:center;
+    
+
+    &__container{
+        @include flex_row();
+        width: 88%;
+        height: 55%;
+        justify-content:space-between;
+        color: $cinza;
+        padding: 0 32px;
+        align-items: center
+    }
+
+    &__container_logo{
+        @include flex_row();
+        font-size: $fonte-logo;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    &__logo {
+        @include area(27px, 27px)
+    }
+
+    &__links {
+        @include flex_row();
+        list-style-type: none;
+        gap: 40px;
+        font-size: $fonte-botao;
+    }
+
+    &__item {
+        color: $cinza;
+        text-decoration: none;
+    }
+
+    &__container_botao {
+        font-size: $fonte-botao;
+    }
+
+
+    &__botao {
+
+        padding: 10px 18px;
+        font-weight: 500;
+        border-radius: 8px;
+        color: $cinza;
+
+        &--entrar {
+            border: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+        }
+
+        &--cadastrar {
+            color: white;
+            background-color: $vermelho-vinho;
+            border: 1px solid $vermelho-vinho
+        }
+    }
+}
+
+
+
+.cabecalho {
+    @include area(100%, 408px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 96px 0;
+    gap: 24px;
+
+    &__subheading {
+        font-size: $fonte-botao;
+        color: $vermelho-vinho;
+        font-weight: 600;
+    }
+
+    &__heading {
+        font-size: $fonte-titulo-banner;
+        color: $preto;
+        font-weight: 600;
+    }
+
+    &__texto {
+        display: inline-flex;
+        font-size: $fonte-texto-banner;
+        color: $cinza;
+        font-weight: 400;
+        @include area(55%, auto);
+        text-align: center;
+    }
+}
+
+
+
+.metricas {
+    @include area(100%, 288px);
+    @include flex_row();
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 96px;
+
+    &__container {
+        @include flex_row();
+        @include area(88%, auto);
+        justify-content:space-between;
+        gap: 32px;
+
+    }
+    &__item {
+        width: 20%;
+    }
+
+    &__numero {
+        color: $vermelho-vinho;
+        font-size: $fonte-numero-grande;
+        font-weight: 600;
+    }
+
+    &__titulo {
+        font-size: $fonte-normal;
+        font-weight: 500;
+    }
+
+    &__texto {
+        color: $cinza;
+        font-size: $fonte-menor;
+        font-weight: 400;
+    }
+}
+
+
+.vagas {
+    width: 100%;
+    padding: 96px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    &__subheading{
+        font-size: $fonte-botao;
+        color: $vermelho-vinho;
+        font-weight: 600;
+    }
+
+    &__heading {
+        font-size: 44px;
+        color: $preto;
+        font-weight: 600;
+    }
+
+    &__texto {
+        color: $cinza;
+        font-size: $fonte-menor;
+        font-weight: 400;
+    }
+
+    &__banner {
+        margin: 2rem 0;
+    }
+    &__opcoes {
+        @include area(50%, auto);
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__items {
+        
+        
+        list-style-type: none;
+        margin-left: 2rem;
+        
+
+        li {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
+
+    &__titulo {
+        font-weight: 500;
+    }
+
+    &__item-titulo {
+        
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &__item-descricao , &__item-preco {
+        color: $cinza;
+        font-size: 16px;
+        font-weight: 500;
+        
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+    }
+}
+
+.depoimentos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 96px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &__pessoas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__subheading {
+        color: $vermelho-vinho;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    &__heading {
+        //styleName: Display md/Medium;
+        font-size: 36px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        text-align: center;
+    }
+
+    &__nome {
+        //styleName: Text md/Medium;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &__area {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+}
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 96px 0;
+    gap: 40px;
+    &__heading {
+        //styleName: Display md/Semibold;
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 44px;
+        letter-spacing: -0.02em;
+        text-align: center;
+    }
+
+    &__subtitulo {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    &__cadastro {
+        width: 500px;
+        gap: 0;
+    }
+
+    &__email {
+        width: 360px;
+        height: 48px;
+        background-color: $cor-branca;
+        border: none;
+        padding: 12px 14px;
+    }
+
+
+    &__email:placeholder {
+        color: $cinza;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    &__botao {
+        width: 116px;
+        height: 48px;
+        border-radius: 8px;
+        opacity: 0px;
+        background-color: $vermelho-vinho;
+        color: $cor-branca;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
